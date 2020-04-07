@@ -32,14 +32,52 @@ Well, certainly we should use different methodologies depending on the project r
   * You want every game to be unique.
 
 ## Different approaches by different games
+The most well-known game using procedural map generation is Minecraft by Mojang. 
+
+### Different algorithms
+* Binary space partitioning
+![Concept](link-to-image)
+* Noise
 
 ## Description in detail for the selected approach
 
 ## Links to more documentation
 
-## TODOs and Solution inside the repository as VS projects
+## TODOs and Solution inside the repository as VS p rojects
 
 ## Optional Homework for practicing
 
 ## Explanation of any other improvements on the system
 
+
+
+# Notes
+
+Usually:
+-Environment
+-Enemies
+-Loot objects
+But it can be anything
+
+Pros:
+-new challenges and experiences
+-you can play for years
+-adapt to the player difficulty
+-monetization++
+
+Cons:
+-You can't do it 100% as you want
+-It takes time and resources to build
+-Bad for building only 1 level
+
+it's not random, but quasi random 
+
+get a different seed every game, put into the formula and get the result
+
+Content generated beforehand by developers
+
+Noise patterns generated randomly by some math formula
+Perlin noise to make it smoother
+Ridged multifractal noise
+
+Assets are not stored on your machine as they are generated every time using the seed
