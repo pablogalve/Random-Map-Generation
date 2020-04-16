@@ -13,7 +13,7 @@ This content is generated for the second year’s subject Project 2, under super
 * Design parameters to meet design intent for each map.
 
 ## Intro to the problem
-Manually created maps are limited to our budget (both in time and money). We can create awesome levels but they consume a lot of production resources.   
+Manually created maps are limited to our budget (both in time and money). We can create awesome levels but we can't design an infinite map as it would consume endless production resources.   
 
 What if we could create a different map in each game? What if we could have endless different combinations?
 Well, we can do it with procedural map generation.
@@ -33,11 +33,40 @@ Well, certainly we should use different methodologies depending on the project r
 
 ## Different approaches by different games
 The most well-known game using procedural map generation is Minecraft by Mojang. 
+Civilization V: Randomize layout of its map
+Dwarf Fortress and Minecraft entire worlds
+Dungeons in Diablo are at least partially procedural generated 
 
 ### Different algorithms
-* Binary space partitioning
-![Concept](link-to-image)
-* Noise
+#### Binary space partitioning for Dungeons
+This is probably one of the easiest methods to achieve procedural map generation.
+
+Firstly, we have an empty giant room that we'll use to create the map. We name that giant room 1.
+We need to divide our available big room in different rooms using binary space partitioning.
+Space sizes may be different for each space.
+* We create childs 2 and 3 from parent 1.
+* We create childs 4 and 5 from parent 2.
+* We create childs 6 and 7 from parent 3.
+* We create childs 8 and 9 from parent 5.
+We divide until we can't divide anymore or until we reach a defined maximum number of spaces.
+We'll get something like that:
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/Assets/Binary_space_partitioning_concept__01_dividing_space.PNG" alt="alt text" width="400" height="200">
+
+Then, once we have the space divided we generate separated rooms inside each space.
+In order to that we generate a room of the space' size but leaving a margin in order to leave some empty spaces without rooms.
+For example, we can achieve that by giving a 10% margin between space wall and room wall.
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/Assets/Binary_space_partitioning_concept__02_rooms.PNG" alt="alt text" width="400" height="200">
+
+Finally, we create corridors to connect all the rooms and make sure that the entire map is reachable.
+In order to achieve that, we start with the youngest child and we connect chils from the same parent.
+* 8 and 9
+* 4 and 5. But 4 is composed by 8 and 9, so we create a corridor between 5 and (8 or 9, can be choosed randomly).
+* 6 and 7
+* 2 and 3. Both 2 and 3 are groups of rooms so we need to connect one room from each group.
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/Assets/Binary_space_partitioning_concept__03_corridors.PNG" alt="alt text" width="400" height="200">
+
+#### Noise
 
 ## Description in detail for the selected approach
 
