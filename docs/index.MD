@@ -51,6 +51,7 @@ The most well-known game using procedural map generation is Minecraft by Mojang.
 Civilization V: Randomize layout of its map
 Dwarf Fortress and Minecraft entire worlds
 Dungeons in Diablo are at least partially procedural generated 
+Spore
 
 ### Different algorithms
 #### Binary space partitioning for Dungeons
@@ -81,9 +82,23 @@ In order to achieve that, we start with the youngest child and we connect chils 
 * 2 and 3. Both 2 and 3 are groups of rooms so we need to connect one room from each group.
 <img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/Assets/Binary_space_partitioning_concept__03_corridors.PNG" alt="alt text" width="400" height="200">
 
-#### Noise
+You can find more information about this method in this !["Sunny Valley Studio" video series on youtube.](https://www.youtube.com/watch?v=VnqN0v95jtU)
+
+#### Perlin Noise
+
+
+![The Happie Cat](https://www.youtube.com/watch?v=JdYkcrW8FBg)
+
+#### Interpretive 
+Used by Spore
+<img src="Interpretive_spore_01.PNG" alt="alt text" width="400" height="200">
+<img src="Interpretive_spore_02.PNG" alt="alt text" width="400" height="200">
+<img src="Interpretive_motion.PNG" alt="alt text" width="400" height="200">
 
 ## Description in detail for the selected approach
+We'll be using Perlin Noise for this tutorial.
+
+![Coding Challenge #10 2D Terrain Generation using Perlin Noise](https://www.youtube.com/watch?v=jv6YT9pPIHw)
 
 ## Links to more documentation
 
@@ -103,3 +118,10 @@ Perlin noise to make it smoother
 Ridged multifractal noise
 
 Assets are not stored on your machine as they are generated every time using the seed
+
+### Problem
+You have generated mathematically unique, but...
+They are not perceived as unique
+10.000 bowls of oatmeal problem
+It's sometimes a problemes, sometimes not.
+For example in a forest if trees are similar or equal it's not a problem
