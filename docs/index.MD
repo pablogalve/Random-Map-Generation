@@ -24,12 +24,27 @@ Well, certainly we should use different methodologies depending on the project r
 
 * Manual
   * If it's a small game.
-  * It needs to follow a defined story/narrative.
-  * You need extreme details.
+  * If it needs to follow a defined story/narrative.
+  * If you need extreme details.
 * Procedural
-  * It's an open-world game.
-  * You want endless different map combinations.
-  * You want every game to be unique.
+  * If it's an open-world game.
+  * If you want endless different map combinations.
+  * If you want every game to be unique.
+
+#### Pros of procedural algorithms
+- New challenges and experiences on each game.
+- Users can play for years as it's a never ending different experience.
+- Maps can be adjust its difficulty based on the player.
+- Monetization can be dramatically increased.
+### Cons of procedural algorithms
+- You can't design it 100% as you want, that's why narrative focused games don't use it.
+- It takes time and resources to build.
+- Bad for building only 1 level as it's really expensive.
+
+It is usually used for creating the environment, spawning enemies or looting objects.
+However, it can be used for anything as you could procedurally generate an entire universe.
+
+We also have to take into account that these methodologies are not trully random but quasi-random and they use content generated beforehand by developers. The computed chooses where to allocate each element of even combine parts of elements to generate more complex objects or assets.
 
 ## Different approaches by different games
 The most well-known game using procedural map generation is Minecraft by Mojang. 
@@ -81,29 +96,7 @@ In order to achieve that, we start with the youngest child and we connect chils 
 
 
 # Notes
-
-Usually:
--Environment
--Enemies
--Loot objects
-But it can be anything
-
-Pros:
--new challenges and experiences
--you can play for years
--adapt to the player difficulty
--monetization++
-
-Cons:
--You can't do it 100% as you want
--It takes time and resources to build
--Bad for building only 1 level
-
-it's not random, but quasi random 
-
 get a different seed every game, put into the formula and get the result
-
-Content generated beforehand by developers
 
 Noise patterns generated randomly by some math formula
 Perlin noise to make it smoother
