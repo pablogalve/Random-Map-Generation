@@ -34,8 +34,6 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
-public:
-	SDL_Rect test_rect;
 private:
 	SDL_Texture* debug_tex;
 	bool going_up;

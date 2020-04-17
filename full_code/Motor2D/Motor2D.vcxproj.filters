@@ -40,6 +40,9 @@
     <ClCompile Include="j1PerfTimer.cpp">
       <Filter>Desenvolupament  ========\Tools</Filter>
     </ClCompile>
+    <ClCompile Include="Procedural_Map_Gen.cpp">
+      <Filter>Desenvolupament  ========\ProceduralMapGen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="j1Window.h">
@@ -99,6 +102,9 @@
     <ClInclude Include="j1PerfTimer.h">
       <Filter>Desenvolupament  ========\Tools</Filter>
     </ClInclude>
+    <ClInclude Include="Procedural_Map_Gen.h">
+      <Filter>Desenvolupament  ========\ProceduralMapGen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Programacio 2 ===========">
@@ -118,6 +124,9 @@
     </Filter>
     <Filter Include="Desenvolupament  ========\Tools\PuguiXML">
       <UniqueIdentifier>{7cb78d67-17cc-45eb-af97-e2106becce7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Desenvolupament  ========\ProceduralMapGen">
+      <UniqueIdentifier>{23dbb459-f3dc-476b-b8f1-4ad6cb97c640}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

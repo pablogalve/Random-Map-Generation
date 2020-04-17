@@ -12,7 +12,6 @@
 j1Scene::j1Scene() : j1Module()
 {
 	name.create("scene");
-	test_rect = { 400,400,20,40 };
 	going_up = true;
 }
 
@@ -90,17 +89,6 @@ bool j1Scene::Update(float dt)
 		App->map->data.tilesets.count(),
 		map_coordinates.x, map_coordinates.y);
 
-	//test_rect movement
-	if (test_rect.y < 250)
-		going_up = false;
-	if (test_rect.y > 550)
-		going_up = true;
-
-	if (going_up)
-		test_rect.y--;
-	else
-		test_rect.y++;
-
 	return true;
 }
 
@@ -111,9 +99,8 @@ bool j1Scene::PostUpdate()
 	if(App->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN)
 		ret = false;
 
-	App->render->DrawQuad(test_rect, 255, 0, 0, 255);
 	static char title[256];
-	sprintf_s(title, 256, "Minimaps Personal Research - Quad position: x: %i y: %i", test_rect.x, test_rect.y);
+	sprintf_s(title, 256, "Procedural Map Generation");
 	App->win->SetTitle(title);
 
 	return ret;

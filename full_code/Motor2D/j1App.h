@@ -15,8 +15,8 @@ class j1Textures;
 class j1Audio;
 class j1Scene;
 class j1Map;
-class j1PathFinding;
 class j1Minimap;
+class Procedural_Map_Gen;
 
 class j1App
 {
@@ -89,7 +89,7 @@ public:
 	j1Scene*			scene = NULL;
 	j1Map*				map = NULL;
 	j1Minimap*			minimap = NULL;
-	j1PathFinding*		pathfinding = NULL;
+	Procedural_Map_Gen* procedural_map = NULL;
 
 private:
 
