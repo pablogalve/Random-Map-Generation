@@ -1,5 +1,7 @@
 # Procedural Map Generation
 
+[![Marc Pagès](https://avatars1.githubusercontent.com/u/47534017?s=400&v=4)](https://github.com/marcpages2020)
+ 
 I am [Pablo Galve](https://www.linkedin.com/in/pablogalve), student of the
 [Bachelor’s Degree in
 Video Games Programming and Development](https://www.citm.upc.edu/ing/estudis/graus-videojocs/) by UPC at CITM). 
