@@ -66,7 +66,7 @@ Space sizes may be different for each space.
 * We create childs 8 and 9 from parent 5.
 We divide until we can't divide anymore or until we reach a defined maximum number of spaces.
 We'll get something like that:
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/Assets/Binary_space_partitioning_concept__01_dividing_space.PNG" alt="alt text" width="400" height="200">
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/Assets/Binary_space_partitioning_concept__01_dividing_space.png" alt="alt text" width="400" height="200">
 
 Then, once we have the space divided we generate separated rooms inside each space.
 In order to that we generate a room of the space' size but leaving a margin in order to leave some empty spaces without rooms.
