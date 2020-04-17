@@ -1,4 +1,6 @@
 # Procedural Map Generation
+
+[![](/Assets/Binary_space_partitioning_concept__02_rooms.PNG)]()
  
 I am [Pablo Galve](https://www.linkedin.com/in/pablogalve), student of the
 [Bachelor’s Degree in
@@ -103,30 +105,20 @@ Used by Spore
 ## Description in detail for the selected approach
 We'll be using Perlin Noise for this tutorial.
 
-![Coding Challenge #10 2D Terrain Generation using Perlin Noise](https://www.youtube.com/watch?v=jv6YT9pPIHw)
 
-## Links to more documentation
 
-## TODOs and Solution inside the repository as VS p rojects
+
+
+## TODOs
+
+## Video tutorial
 
 ## Optional Homework for practicing
 
 ## Explanation of any other improvements on the system
 
+# Bibliography
+You can get more information here:
 
-
-# Notes
-get a different seed every game, put into the formula and get the result
-
-Noise patterns generated randomly by some math formula
-Perlin noise to make it smoother
-Ridged multifractal noise
-
-Assets are not stored on your machine as they are generated every time using the seed
-
-### Problem
-You have generated mathematically unique, but...
-They are not perceived as unique
-10.000 bowls of oatmeal problem
-It's sometimes a problemes, sometimes not.
-For example in a forest if trees are similar or equal it's not a problem
+!["Sunny Valley Studio" video series on youtube.](https://www.youtube.com/watch?v=VnqN0v95jtU)
+![Coding Challenge #10 2D Terrain Generation using Perlin Noise](https://www.youtube.com/watch?v=jv6YT9pPIHw)
