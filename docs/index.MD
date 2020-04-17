@@ -1,6 +1,4 @@
 # Procedural Map Generation
-
-[![Marc Pagès](https://avatars1.githubusercontent.com/u/47534017?s=400&v=4)](https://github.com/marcpages2020)
  
 I am [Pablo Galve](https://www.linkedin.com/in/pablogalve), student of the
 [Bachelor’s Degree in
@@ -68,6 +66,9 @@ Space sizes may be different for each space.
 * We create childs 8 and 9 from parent 5.
 We divide until we can't divide anymore or until we reach a defined maximum number of spaces.
 We'll get something like that:
+
+[![](/Assets/Binary_space_partitioning_concept__01_dividing_space.PNG]()
+[![](https://github.com/pablogalve/Random-Map-Generation/blob/master/Assets/Binary_space_partitioning_concept__02_rooms.PNG]()
 <img src="/Assets/Binary_space_partitioning_concept__01_dividing_space.PNG" alt="alt text" width="400" height="200">
 
 Then, once we have the space divided we generate separated rooms inside each space.
