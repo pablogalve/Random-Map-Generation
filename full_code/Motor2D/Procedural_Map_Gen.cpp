@@ -30,6 +30,8 @@ void Procedural_Map_Gen::generatePerlinNoise(unsigned int seed)
 	FastNoise myNoise; // Create a FastNoise object
 	myNoise.SetNoiseType(FastNoise::Perlin); // Set the desired noise type
 
+	myNoise.SetSeed(seed);
+
 	for (int x = 0; x < 32; x++)
 	{
 		for (int y = 0; y < 32; y++)
