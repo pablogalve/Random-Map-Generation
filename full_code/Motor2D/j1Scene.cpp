@@ -87,7 +87,7 @@ bool j1Scene::Update(float dt)
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)
 		App->procedural_map->fillMap();
 
-	App->map->DrawProceduralMap(App->map->procedural_map, { 100, 100 });
+	App->map->DrawProceduralMap(App->map->height_map, { 100, 100 });
 
 	int x, y;
 	App->input->GetMousePosition(x, y);

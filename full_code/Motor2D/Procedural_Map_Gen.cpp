@@ -39,15 +39,15 @@ void Procedural_Map_Gen::fillMap()
 	for (int x = 0; x < 100; x++) {
 		for (int y = 0; y < 100; y++) {
 			if(x < 50 && y < 50)
-				App->map->procedural_map[x][y] = 0;
+				App->map->height_map[x][y] = 0;
 			else if (x >= 50 && y < 50)
-				App->map->procedural_map[x][y] = 1;
+				App->map->height_map[x][y] = 1;
 			else if (x < 50 && y >= 50)
-				App->map->procedural_map[x][y] = 2;
+				App->map->height_map[x][y] = 2;
 			else if (x >= 50 && y >= 50)
-				App->map->procedural_map[x][y] = 3;
+				App->map->height_map[x][y] = 3;
 			else 
-				App->map->procedural_map[x][y] = 0;
+				App->map->height_map[x][y] = 0;
 		}
 	}
 }

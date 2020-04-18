@@ -137,7 +137,7 @@ private:
 public:
 
 	MapData data;
-	int procedural_map[100][100];
+	int height_map[100][100];
 private:
 
 	pugi::xml_document	map_file;

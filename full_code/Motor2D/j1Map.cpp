@@ -25,7 +25,7 @@ bool j1Map::Awake(pugi::xml_node& config)
 
 	for(int i = 0; i < 100; i++)
 		for (int j = 0; j < 100; j++) {
-			procedural_map[i][j] = 0;
+			height_map[i][j] = 0;
 		}
 
 	return ret;

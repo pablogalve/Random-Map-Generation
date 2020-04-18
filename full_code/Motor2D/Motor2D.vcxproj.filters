@@ -43,6 +43,9 @@
     <ClCompile Include="Procedural_Map_Gen.cpp">
       <Filter>Desenvolupament  ========\ProceduralMapGen</Filter>
     </ClCompile>
+    <ClCompile Include="FastNoise.cpp">
+      <Filter>Desenvolupament  ========\ProceduralMapGen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="j1Window.h">
@@ -103,6 +106,9 @@
       <Filter>Desenvolupament  ========\Tools</Filter>
     </ClInclude>
     <ClInclude Include="Procedural_Map_Gen.h">
+      <Filter>Desenvolupament  ========\ProceduralMapGen</Filter>
+    </ClInclude>
+    <ClInclude Include="FastNoise.h">
       <Filter>Desenvolupament  ========\ProceduralMapGen</Filter>
     </ClInclude>
   </ItemGroup>

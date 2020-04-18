@@ -3,6 +3,7 @@
 
 #include "j1Module.h"
 #include <time.h>
+#include "FastNoise.h"
 
 class Procedural_Map_Gen : public j1Module
 {
