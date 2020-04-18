@@ -15,7 +15,6 @@ class j1Textures;
 class j1Audio;
 class j1Scene;
 class j1Map;
-class j1Minimap;
 class Procedural_Map_Gen;
 
 class j1App
@@ -88,7 +87,6 @@ public:
 	j1Audio*			audio = NULL;
 	j1Scene*			scene = NULL;
 	j1Map*				map = NULL;
-	j1Minimap*			minimap = NULL;
 	Procedural_Map_Gen* procedural_map = NULL;
 
 private:

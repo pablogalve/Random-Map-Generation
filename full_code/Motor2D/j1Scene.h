@@ -34,8 +34,14 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
-private:
+public:
 	SDL_Texture* debug_tex;
+	SDL_Texture* grass_tex;
+	SDL_Texture* water_tex;
+	SDL_Texture* forest_tex;
+	SDL_Texture* sand_tex;
+private:
+	
 	bool going_up;
 };
 

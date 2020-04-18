@@ -4,6 +4,7 @@
 #include "j1Textures.h"
 #include "j1Map.h"
 #include <math.h>
+#include "j1Scene.h"
 
 j1Map::j1Map() : j1Module(), map_loaded(false)
 {
@@ -22,6 +23,10 @@ bool j1Map::Awake(pugi::xml_node& config)
 
 	folder.create(config.child("folder").child_value());
 
+	for(int i = 0; i < 100; i++)
+		for (int j = 0; j < 100; j++) {
+			procedural_map[i][j] = 0;
+		}
 
 	return ret;
 }
@@ -51,8 +56,8 @@ void j1Map::Draw()
 
 					SDL_Rect r = tileset->GetTileRect(tile_id);
 					iPoint pos = MapToWorld(x, y);
-										
-					//App->render->Blit(tileset->texture, pos.x, pos.y, &r);
+
+					App->render->Blit(tileset->texture, pos.x, pos.y, &r);
 				}
 			}
 		}
@@ -450,6 +455,27 @@ bool j1Map::LoadProperties(pugi::xml_node& node, Properties& properties)
 	}
 
 	return ret;
+}
+
+void j1Map::DrawProceduralMap(int procedural_map[][100], iPoint size)
+{
+	for (int x = 0; x < size.x; x++)
+	{	
+		for (int y = 0; y < size.y; y++) {
+			iPoint pos = MapToWorld(x, y);
+
+			if (procedural_map[x][y] == 0) //Water
+				App->render->Blit(App->scene->debug_tex, pos.x, pos.y);
+			else if (procedural_map[x][y] == 1) //Sand
+				App->render->Blit(App->scene->sand_tex, pos.x, pos.y);
+			else if (procedural_map[x][y] == 2) //Grass
+				App->render->Blit(App->scene->grass_tex, pos.x, pos.y);
+			else if (procedural_map[x][y] == 3) //Forest
+				App->render->Blit(App->scene->forest_tex, pos.x, pos.y);
+			else
+				LOG("Error. <procedural_map> was empty in coordinates x: %i y: %i", x, y);
+		}
+	}
 }
 
 bool j1Map::CreateWalkabilityMap(int& width, int& height, uchar** buffer) const
