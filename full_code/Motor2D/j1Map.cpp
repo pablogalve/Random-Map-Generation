@@ -100,22 +100,13 @@ TileSet* j1Map::GetTilesetFromTileId(int id) const
 iPoint j1Map::MapToWorld(int x, int y) const
 {
 	iPoint ret;
-
-	if(data.type == MAPTYPE_ORTHOGONAL)
-	{
-		ret.x = x * data.tile_width;
-		ret.y = y * data.tile_height;
-	}
-	else if(data.type == MAPTYPE_ISOMETRIC)
-	{
-		ret.x = (x - y) * (data.tile_width * 0.5f);
-		ret.y = (x + y) * (data.tile_height * 0.5f);
-	}
-	else
-	{
-		LOG("Unknown map type");
-		ret.x = x; ret.y = y;
-	}
+		
+	//Isometric Map
+	ret.x = (x - y) * (64 * 0.5f);
+	ret.y = (x + y) * (32 * 0.5f);
+	
+	//If you need another type of map (Orthogonal, Isometric, Staggered...)
+	//You would need to adapt the formula
 
 	return ret;
 }
@@ -463,9 +454,9 @@ void j1Map::DrawProceduralMap(int procedural_map[][100], iPoint size)
 	{	
 		for (int y = 0; y < size.y; y++) {
 			iPoint pos = MapToWorld(x, y);
-
+			
 			if (procedural_map[x][y] == 0) //Water
-				App->render->Blit(App->scene->debug_tex, pos.x, pos.y);
+				App->render->Blit(App->scene->water_tex, pos.x, pos.y);
 			else if (procedural_map[x][y] == 1) //Sand
 				App->render->Blit(App->scene->sand_tex, pos.x, pos.y);
 			else if (procedural_map[x][y] == 2) //Grass

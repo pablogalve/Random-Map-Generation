@@ -35,9 +35,10 @@ bool j1Scene::Start()
 	//App->map->Load("iso_walk.tmx");
 
 	debug_tex = App->tex->Load("maps/path.png");
-	sand_tex = App->tex->Load("maps/path2.png");
-	grass_tex = App->tex->Load("maps/meta.png");
-	forest_tex = App->tex->Load("maps/meta2.png");
+	water_tex = App->tex->Load("maps/water.png");
+	sand_tex = App->tex->Load("maps/sand.png");
+	grass_tex = App->tex->Load("maps/grass.png");
+	forest_tex = App->tex->Load("maps/forest.png");
 
 	return true;
 }
@@ -86,7 +87,7 @@ bool j1Scene::Update(float dt)
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)
 		App->procedural_map->fillMap();
 
-	App->map->DrawProceduralMap(App->map->procedural_map, { 10, 10 });
+	App->map->DrawProceduralMap(App->map->procedural_map, { 100, 100 });
 
 	int x, y;
 	App->input->GetMousePosition(x, y);

@@ -27,14 +27,27 @@ void Procedural_Map_Gen::generatePerlinNoise() {
 
 void Procedural_Map_Gen::generatePerlinNoise(unsigned int seed)
 {
+
+
+	fillMap();
 }
 
 void Procedural_Map_Gen::fillMap()
 {
+
 	//Fills the map with data extracted from perlin noise
 	for (int x = 0; x < 100; x++) {
 		for (int y = 0; y < 100; y++) {
-			App->map->procedural_map[x][y] = 1;
+			if(x < 50 && y < 50)
+				App->map->procedural_map[x][y] = 0;
+			else if (x >= 50 && y < 50)
+				App->map->procedural_map[x][y] = 1;
+			else if (x < 50 && y >= 50)
+				App->map->procedural_map[x][y] = 2;
+			else if (x >= 50 && y >= 50)
+				App->map->procedural_map[x][y] = 3;
+			else 
+				App->map->procedural_map[x][y] = 0;
 		}
 	}
 }
