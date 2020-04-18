@@ -31,10 +31,11 @@ void Procedural_Map_Gen::generatePerlinNoise(unsigned int seed)
 	myNoise.SetNoiseType(FastNoise::Perlin); // Set the desired noise type
 
 	myNoise.SetSeed(seed);
+	myNoise.SetFrequency(0.05); //Default: 0:01
 
-	for (int x = 0; x < 32; x++)
+	for (int x = 0; x < 100; x++)
 	{
-		for (int y = 0; y < 32; y++)
+		for (int y = 0; y < 100; y++)
 		{
 			App->map->height_map[x][y] = myNoise.GetNoise(x, y);
 			LOG("Noise on x: %i y: %i is %f", x, y, App->map->height_map[x][y]);

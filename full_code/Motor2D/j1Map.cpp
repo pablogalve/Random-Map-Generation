@@ -457,13 +457,15 @@ void j1Map::DrawProceduralMap(float procedural_map[][100], iPoint size)
 			
 			if (procedural_map[x][y] >= 0) //Water
 				App->render->Blit(App->scene->water_tex, pos.x, pos.y);
-			if (procedural_map[x][y] > 0.05) //Sand
+			if (procedural_map[x][y] > 0.15) //Sand
 				App->render->Blit(App->scene->sand_tex, pos.x, pos.y);
-			if (procedural_map[x][y] > 0.1) //Grass
+			if (procedural_map[x][y] > 0.2) //Grass
 				App->render->Blit(App->scene->grass_tex, pos.x, pos.y);
-			if (procedural_map[x][y] > 0.15) //Forest
+			if (procedural_map[x][y] > 0.5) //Forest
 				App->render->Blit(App->scene->forest_tex, pos.x, pos.y);
 			
+			if (procedural_map[x][y] < 0)
+				LOG("Not possible");
 		}
 	}
 }

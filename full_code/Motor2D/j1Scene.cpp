@@ -53,8 +53,8 @@ bool j1Scene::PreUpdate()
 
 	int x, y;
 	App->input->GetMousePosition(x, y);
-	iPoint p = App->render->ScreenToWorld(x, y);
-	p = App->map->WorldToMap(p.x, p.y);
+	//iPoint p = App->render->ScreenToWorld(x, y);
+	//p = App->map->WorldToMap(p.x, p.y);
 
 	return true;
 }
