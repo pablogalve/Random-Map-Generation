@@ -448,23 +448,22 @@ bool j1Map::LoadProperties(pugi::xml_node& node, Properties& properties)
 	return ret;
 }
 
-void j1Map::DrawProceduralMap(int procedural_map[][100], iPoint size)
+void j1Map::DrawProceduralMap(float procedural_map[][100], iPoint size)
 {
 	for (int x = 0; x < size.x; x++)
 	{	
 		for (int y = 0; y < size.y; y++) {
 			iPoint pos = MapToWorld(x, y);
 			
-			if (procedural_map[x][y] == 0) //Water
+			if (procedural_map[x][y] >= 0) //Water
 				App->render->Blit(App->scene->water_tex, pos.x, pos.y);
-			else if (procedural_map[x][y] == 1) //Sand
+			if (procedural_map[x][y] > 0.05) //Sand
 				App->render->Blit(App->scene->sand_tex, pos.x, pos.y);
-			else if (procedural_map[x][y] == 2) //Grass
+			if (procedural_map[x][y] > 0.1) //Grass
 				App->render->Blit(App->scene->grass_tex, pos.x, pos.y);
-			else if (procedural_map[x][y] == 3) //Forest
+			if (procedural_map[x][y] > 0.15) //Forest
 				App->render->Blit(App->scene->forest_tex, pos.x, pos.y);
-			else
-				LOG("Error. <procedural_map> was empty in coordinates x: %i y: %i", x, y);
+			
 		}
 	}
 }

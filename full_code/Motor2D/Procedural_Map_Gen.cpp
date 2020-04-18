@@ -27,9 +27,19 @@ void Procedural_Map_Gen::generatePerlinNoise() {
 
 void Procedural_Map_Gen::generatePerlinNoise(unsigned int seed)
 {
+	FastNoise myNoise; // Create a FastNoise object
+	myNoise.SetNoiseType(FastNoise::Perlin); // Set the desired noise type
 
+	for (int x = 0; x < 32; x++)
+	{
+		for (int y = 0; y < 32; y++)
+		{
+			App->map->height_map[x][y] = myNoise.GetNoise(x, y);
+			LOG("Noise on x: %i y: %i is %f", x, y, App->map->height_map[x][y]);
+		}
+	}
 
-	fillMap();
+	//fillMap();
 }
 
 void Procedural_Map_Gen::fillMap()

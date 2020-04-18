@@ -126,7 +126,7 @@ public:
 	bool CreateWalkabilityMap(int& width, int& height, uchar** buffer) const;
 	TileSet* GetTilesetFromTileId(int id) const;
 
-	void DrawProceduralMap(int procedural_map[][100], iPoint size);
+	void DrawProceduralMap(float procedural_map[][100], iPoint size);
 private:
 
 	bool LoadMap();
@@ -137,7 +137,7 @@ private:
 public:
 
 	MapData data;
-	int height_map[100][100];
+	float height_map[100][100];
 private:
 
 	pugi::xml_document	map_file;

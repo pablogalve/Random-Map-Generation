@@ -87,6 +87,9 @@ bool j1Scene::Update(float dt)
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)
 		App->procedural_map->fillMap();
 
+	if (App->input->GetKey(SDL_SCANCODE_F1) == KEY_REPEAT)
+		App->procedural_map->generatePerlinNoise();
+
 	App->map->DrawProceduralMap(App->map->height_map, { 100, 100 });
 
 	int x, y;
