@@ -135,6 +135,8 @@ private:
 	bool LoadLayer(pugi::xml_node& node, MapLayer* layer);
 	bool LoadProperties(pugi::xml_node& node, Properties& properties);
 public:
+	float low_value;
+	float high_value;
 
 	MapData data;
 	float height_map[100][100];

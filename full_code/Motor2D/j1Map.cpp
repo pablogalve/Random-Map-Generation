@@ -28,6 +28,10 @@ bool j1Map::Awake(pugi::xml_node& config)
 			height_map[i][j] = 0;
 		}
 
+
+	low_value = 0;
+	high_value = 0;
+
 	return ret;
 }
 
@@ -450,29 +454,35 @@ bool j1Map::LoadProperties(pugi::xml_node& node, Properties& properties)
 
 void j1Map::DrawProceduralMap(float procedural_map[][100], iPoint size)
 {
-	float scale = 0.2f;
+	float scale = 0.3f;
+
+	
 
 	for (int x = 0; x < size.x; x++)
 	{	
 		for (int y = 0; y < size.y; y++) {
 			iPoint pos = MapToWorld(x, y);
 			
-			//camera culling
-			//if (x > App->render->camera.x && y > App->render->camera.y) 
-			{
-				if (procedural_map[x][y] >= 0) //Water
-					App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
-				if (procedural_map[x][y] > 0.15) //Sand
-					App->render->Blit(App->scene->sand_tex, pos.x, pos.y, NULL, scale);
-				if (procedural_map[x][y] > 0.2) //Grass
-					App->render->Blit(App->scene->grass_tex, pos.x, pos.y, NULL, scale);
-				if (procedural_map[x][y] > 0.4) //Forest
-					App->render->Blit(App->scene->forest_tex, pos.x, pos.y, NULL, scale);
-			}
-			//else
-				//LOG("no");
+			if (procedural_map[x][y] >= 0) //Water
+				App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
+			if (procedural_map[x][y] > 0.4) //Sand
+				App->render->Blit(App->scene->sand_tex, pos.x, pos.y, NULL, scale);
+			if (procedural_map[x][y] > 0.45) //Grass
+				App->render->Blit(App->scene->grass_tex, pos.x, pos.y, NULL, scale);
+			if (procedural_map[x][y] > 0.7) //Forest
+				App->render->Blit(App->scene->forest_tex, pos.x, pos.y, NULL, scale);
+
+			//Debug to see low and high values
+			if (procedural_map[x][y] > high_value)
+				high_value = procedural_map[x][y];
+
+			if (procedural_map[x][y] < low_value)
+				low_value = procedural_map[x][y];
 		}
 	}
+	LOG("low value %f", low_value);
+	LOG("high value %f", high_value);
+	LOG("FD");
 }
 
 bool j1Map::CreateWalkabilityMap(int& width, int& height, uchar** buffer) const

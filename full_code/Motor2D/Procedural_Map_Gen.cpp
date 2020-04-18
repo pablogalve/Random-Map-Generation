@@ -37,12 +37,12 @@ void Procedural_Map_Gen::generatePerlinNoise(unsigned int seed)
 	{
 		for (int y = 0; y < 100; y++)
 		{
-			App->map->height_map[x][y] = myNoise.GetNoise(x, y);
-			LOG("Noise on x: %i y: %i is %f", x, y, App->map->height_map[x][y]);
+			//We ensure that noise is always between 0 and 1
+			App->map->height_map[x][y] = (myNoise.GetNoise(x, y) + 1) * 0.5;
+
+			LOG("Noise: %f", App->map->height_map[x][y]);
 		}
 	}
-
-	//fillMap();
 }
 
 void Procedural_Map_Gen::fillMap()
