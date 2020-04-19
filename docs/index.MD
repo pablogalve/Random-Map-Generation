@@ -82,6 +82,7 @@ In order to achieve that, we start with the youngest child and we connect chils 
 <img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__03_corridors.PNG?raw=true" alt="Corridors" width="400" height="200">
 
 And we could have a result like that:
+
 <img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/dungeon.PNG?raw=true" alt="Dungeon" width="400" height="200">
 
 #### Interpretive 
@@ -89,8 +90,12 @@ Used by Spore.
 
 They generate creatures with interpretive methodologies.
 
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_spore_02.PNG?raw=true" alt="alt text" width="100" height="50">
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_motion.PNG?raw=true" alt="alt text" width="100" height="50">
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_spore_02.PNG?raw=true" alt="alt text" width="200" height="100">
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_motion.PNG?raw=true" alt="alt text" width="200" height="100">
+
+|![Spore](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_spore_02.PNG?raw=true)|![Motion Graphics](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_motion.PNG?raw=true)|
+|:---:|:---:|
+|Spore|Motion Graphics|
 
 #### Perlin Noise
 We'll be using this method for this tutorial. Explained below.
@@ -104,7 +109,26 @@ Perlin noise is a smoother type of noise.
 
 We only need to store a seed and a math formula in order to procedurally generate an entire world as they are not located in a server but generated in real-time with your data.
 What we do is introduce coordinates and our seed number, and the program will return as the output the map height at our desired coordinates. If we change the seed number, the generated world will be entirely different and unique.
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_formula.PNG?raw=true" alt="Height Formula" width="100" height="50">
+
+We interpretate Perlin noise as numbers, I mean:
+
+The white areas are 0, the black areas are 1 and the grey areas are something between 0 and 1.
+
+This is a perlin noise interpretation in 3D:
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_formula.PNG?raw=true" alt="Height Formula" width="400" height="200">
+
+Then, we interpretate numbers to spawn terrains. For this tutorial I used the following data
+- 0-0.35 -> Water
+- 0.35-0.4 -> Sand
+- 0.35-0.4 -> Grass
+- 0.35-0.4 -> Forest
+- 0.35-0.4 -> Mountain
+- 0.35-0.4 -> Snowy Mountain
+
+That was the result:
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/procedural_map_03.PNG?raw=true" alt="Height Formula" width="400" height="200">
 
 ## TODOs
 
@@ -116,13 +140,18 @@ You should only need two things
 
 ### Occlusion Culling
 Neither computers nor servers can manage the computational power of storing an entire universe or world.
+
 Well, some of them may be able to do it, but is really far from being efficient.
+
 That's why you should render only what is on screen.
+
 That way you save memory and prepare the program for generating an infinite world.
 
 ### Perlin Noise Generation
 In our tutorial we limited the map from [100][100] to [100][100].
+
 In order to make an infinite world you would need a height_map array that covers visible screen.
+
 When you move the camera you have to unload the map areas that you are now not seeing and generate the new areas that you are exploring- 
 
 # Bibliography
