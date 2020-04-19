@@ -48,14 +48,11 @@ We also have to take into account that these methodologies are not trully random
 
 ## Different approaches by different games
 The most well-known game using procedural map generation is Minecraft by Mojang. 
-Civilization V: Randomize layout of its map
-Dwarf Fortress and Minecraft entire worlds
-Dungeons in Diablo are at least partially procedural generated 
-Spore
+Other games that have used procedural mothodologies for its entire maps or for some of its parts are Civilization V, Dwarf Fortress, Spore and Diablo
 
 ### Different algorithms
 #### Binary space partitioning for Dungeons
-This is probably one of the easiest methods to achieve procedural map generation.
+This is probably one of the easiest methods to achieve procedural map generation for dungeons, but it's also really simple.
 
 Firstly, we have an empty giant room that we'll use to create the map. We name that giant room 1.
 We need to divide our available big room in different rooms using binary space partitioning.
@@ -73,7 +70,7 @@ Then, once we have the space divided we generate separated rooms inside each spa
 In order to that we generate a room of the space' size but leaving a margin in order to leave some empty spaces without rooms.
 For example, we can achieve that by giving a 10% margin between space wall and room wall.
 
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__02_rooms.PNG?raw=true" alt="Dividing Space" width="400" height="200">
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__02_rooms.PNG?raw=true" alt="Generate rooms" width="400" height="200">
 
 Finally, we create corridors to connect all the rooms and make sure that the entire map is reachable.
 In order to achieve that, we start with the youngest child and we connect chils from the same parent.
@@ -82,37 +79,89 @@ In order to achieve that, we start with the youngest child and we connect chils 
 * 6 and 7
 * 2 and 3. Both 2 and 3 are groups of rooms so we need to connect one room from each group.
 
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__03_corridors.PNG?raw=true" alt="Dividing Space" width="400" height="200">
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__03_corridors.PNG?raw=true" alt="Corridors" width="400" height="200">
+
+And we could have a result like that:
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/dungeon.PNG?raw=true" alt="Dungeon" width="400" height="200">
 
 #### Interpretive 
-Used by Spore
-<img src="Interpretive_spore_01.PNG?raw=true" alt="alt text" width="100" height="50">
-<img src="Interpretive_spore_02.PNG?raw=true" alt="alt text" width="100" height="50">
-<img src="Interpretive_motion.PNG?raw=true" alt="alt text" width="100" height="50">
+Used by Spore.
+
+They generate creatures with interpretive methodologies.
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_spore_02.PNG?raw=true" alt="alt text" width="200" height="100">
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_motion.PNG?raw=true" alt="alt text" width="200" height="100">
+
+|![Spore](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_spore_02.PNG?raw=true)|![Motion Graphics](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_motion.PNG?raw=true)|
+|:---:|:---:|
+|Spore|Motion Graphics|
 
 #### Perlin Noise
-
-
-
-
-
+We'll be using this method for this tutorial. Explained below.
 
 ## Perlin Noise Explained in Depth
+Normal noise is what we could see in an out of sync TV.
+Perlin noise is a smoother type of noise.
+|![Normal noise](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/noise_normal.PNG?raw=true)|![Perlin noise](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/noise_perlin.PNG?raw=true)|
+|:---:|:---:|
+|Normal Noise|Perlin Noise|
 
+We only need to store a seed and a math formula in order to procedurally generate an entire world as they are not located in a server but generated in real-time with your data.
+What we do is introduce coordinates and our seed number, and the program will return as the output the map height at our desired coordinates. If we change the seed number, the generated world will be entirely different and unique.
 
+We interpretate Perlin noise as numbers, I mean:
 
+The white areas are 0, the black areas are 1 and the grey areas are something between 0 and 1.
 
+This is a perlin noise interpretation in 3D:
 
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_formula.PNG?raw=true" alt="Height Formula" width="400" height="200">
+
+Then, we interpretate numbers to spawn terrains. For this tutorial I used the following data
+- 0-0.35 -> Water
+- 0.35-0.4 -> Sand
+- 0.35-0.4 -> Grass
+- 0.35-0.4 -> Forest
+- 0.35-0.4 -> Mountain
+- 0.35-0.4 -> Snowy Mountain
+
+That was the result:
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/procedural_map_03.PNG?raw=true" alt="Height Formula" width="400" height="200">
 
 ## TODOs
 
-## Optional Homework for practicing
+## Theory on how to do Infinite Worlds
+It could seem difficult to achieve, but it is not.
+You should only need two things
+- Occlusion Culling
+- Generate Perlin Noise only for all the coordinates seen in screen
 
-## Explanation of any other improvements on the system
+### Occlusion Culling
+Neither computers nor servers can manage the computational power of storing an entire universe or world.
+
+Well, some of them may be able to do it, but is really far from being efficient.
+
+That's why you should render only what is on screen.
+
+That way you save memory and prepare the program for generating an infinite world.
+
+### Perlin Noise Generation
+In our tutorial we limited the map from [100][100] to [100][100].
+
+In order to make an infinite world you would need a height_map array that covers visible screen.
+
+When you move the camera you have to unload the map areas that you are now not seeing and generate the new areas that you are exploring- 
 
 # Bibliography
 You can get more information here:
 
-!["Sunny Valley Studio" video series on youtube.](https://www.youtube.com/watch?v=VnqN0v95jtU)
-![The Happie Cat](https://www.youtube.com/watch?v=JdYkcrW8FBg)
-![Coding Challenge #10 2D Terrain Generation using Perlin Noise](https://www.youtube.com/watch?v=jv6YT9pPIHw)
+Video: ["Sunny Valley Studio" video series on youtube.](https://www.youtube.com/watch?v=VnqN0v95jtU)
+
+Video: [The Happie Cat: How Procedurally Generated Terrain Works](https://www.youtube.com/watch?v=JdYkcrW8FBg)
+
+Video: [Coding Challenge #10 2D Terrain Generation using Perlin Noise](https://www.youtube.com/watch?v=jv6YT9pPIHw)
+
+I used [Fast c++ Noise Library by Jordan Peck](https://github.com/Auburns/FastNoise)
+
