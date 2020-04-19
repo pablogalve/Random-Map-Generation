@@ -42,7 +42,7 @@ bool j1Scene::Start()
 	mountain_tex = App->tex->Load("maps/mountain.png");
 	mountain_snow_tex = App->tex->Load("maps/mountain_snow.png");
 
-	//TODO
+	//TODO 5: Use the seed
 	/*Default seed is 1337
 	But we need a different seed on each game
 	There's a function that generates a new seed,
@@ -82,13 +82,18 @@ bool j1Scene::Update(float dt)
 	if (App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
 		App->render->camera.x -= floor(200.0f * dt);
 
-	//TODO
+	if (App->input->GetKey(SDL_SCANCODE_F1) == KEY_DOWN)
+		App->procedural_map->generatePerlinNoise();
+	
+	//TODO 5: Use the seed
 	//Same as before. The other one was executed at start and this one when you press space	
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
 		App->procedural_map->generatePerlinNoise(App->procedural_map->generateSeed());
 
+	
+
 	//We print the generated map on screen
-	App->map->DrawProceduralMap(App->map->height_map);
+	App->map->DrawProceduralMap();
 
 	int x, y;
 	App->input->GetMousePosition(x, y);

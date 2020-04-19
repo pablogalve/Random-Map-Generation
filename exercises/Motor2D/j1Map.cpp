@@ -458,25 +458,14 @@ void j1Map::DrawProceduralMap(float procedural_map[][100])
 		for (int y = 0; y < 100; y++) {
 			iPoint pos = MapToWorld(x, y);
 			
-			//TODO
+			//TODO 3: Draw Map from height_map
 			/*
 				Blit a different texture depending on the value we have in [x][y] coordinates
 				Textures are inside App->scene
 				We the following textures: water, sand, grass, forest
 			*/
 
-			if (procedural_map[x][y] >= 0) //Water
-				App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.35) //Sand
-				App->render->Blit(App->scene->sand_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.4) //Grass
-				App->render->Blit(App->scene->grass_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.6) //Forest
-				App->render->Blit(App->scene->forest_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.7) //Mountain
-				App->render->Blit(App->scene->mountain_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.8) //Mountain snow
-				App->render->Blit(App->scene->mountain_snow_tex, pos.x, pos.y, NULL, scale);
+			App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
 		}
 	}
 }

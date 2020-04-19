@@ -126,7 +126,7 @@ public:
 	bool CreateWalkabilityMap(int& width, int& height, uchar** buffer) const;
 	TileSet* GetTilesetFromTileId(int id) const;
 
-	void DrawProceduralMap(float procedural_map[][100]);
+	void DrawProceduralMap();
 private:
 
 	bool LoadMap();
