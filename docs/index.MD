@@ -73,7 +73,7 @@ Then, once we have the space divided we generate separated rooms inside each spa
 In order to that we generate a room of the space' size but leaving a margin in order to leave some empty spaces without rooms.
 For example, we can achieve that by giving a 10% margin between space wall and room wall.
 
-IMAGE: Creating Rooms
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__02_rooms.PNG?raw=true" alt="Dividing Space" width="400" height="200">
 
 Finally, we create corridors to connect all the rooms and make sure that the entire map is reachable.
 In order to achieve that, we start with the youngest child and we connect chils from the same parent.
@@ -82,13 +82,13 @@ In order to achieve that, we start with the youngest child and we connect chils 
 * 6 and 7
 * 2 and 3. Both 2 and 3 are groups of rooms so we need to connect one room from each group.
 
-IMAGE: Corridors
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__03_corridors.PNG?raw=true" alt="Dividing Space" width="400" height="200">
 
 #### Interpretive 
 Used by Spore
-<img src="Interpretive_spore_01.PNG" alt="alt text" width="400" height="200">
-<img src="Interpretive_spore_02.PNG" alt="alt text" width="400" height="200">
-<img src="Interpretive_motion.PNG" alt="alt text" width="400" height="200">
+<img src="Interpretive_spore_01.PNG?raw=true" alt="alt text" width="100" height="50">
+<img src="Interpretive_spore_02.PNG?raw=true" alt="alt text" width="100" height="50">
+<img src="Interpretive_motion.PNG?raw=true" alt="alt text" width="100" height="50">
 
 #### Perlin Noise
 
@@ -105,8 +105,6 @@ Used by Spore
 
 
 ## TODOs
-
-## Video tutorial
 
 ## Optional Homework for practicing
 
