@@ -15,12 +15,8 @@ public:
 
 	void generatePerlinNoise();
 	void generatePerlinNoise(unsigned int seed);
-	
-	
-	void fillMap();
 private:
-	time_t msec;
-	
+	time_t msec;	
 };
 
 #endif // !__Procedural_Map_Gen__

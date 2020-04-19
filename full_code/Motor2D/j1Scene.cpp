@@ -40,6 +40,12 @@ bool j1Scene::Start()
 	grass_tex = App->tex->Load("maps/grass.png");
 	forest_tex = App->tex->Load("maps/forest.png");
 
+	//TODO
+	/*Default seed is 1337
+	But we need a different seed on each game
+	There's a function that generates a new seed,
+	use that to pass as an argument to our "generatePerlinNoise" function
+	*/
 	App->procedural_map->generatePerlinNoise(App->procedural_map->generateSeed());
 
 	return true;
@@ -74,9 +80,12 @@ bool j1Scene::Update(float dt)
 	if (App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
 		App->render->camera.x -= floor(200.0f * dt);
 
-	if (App->input->GetKey(SDL_SCANCODE_F1) == KEY_REPEAT)
+	//TODO
+	//Same as before. The other one was executed at start and this one when you press F1	
+	if (App->input->GetKey(SDL_SCANCODE_F1) == KEY_DOWN)
 		App->procedural_map->generatePerlinNoise(App->procedural_map->generateSeed());
 
+	//We print the generated map on screen
 	App->map->DrawProceduralMap(App->map->height_map, { 100, 100 });
 
 	int x, y;

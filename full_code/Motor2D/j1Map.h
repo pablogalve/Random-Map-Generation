@@ -140,8 +140,7 @@ public:
 
 	MapData data;
 	float height_map[100][100];
-private:
-
+private:	
 	pugi::xml_document	map_file;
 	p2SString			folder;
 	bool				map_loaded;

@@ -29,6 +29,7 @@ bool j1Map::Awake(pugi::xml_node& config)
 		}
 
 
+
 	low_value = 0;
 	high_value = 0;
 
@@ -454,20 +455,25 @@ bool j1Map::LoadProperties(pugi::xml_node& node, Properties& properties)
 
 void j1Map::DrawProceduralMap(float procedural_map[][100], iPoint size)
 {
-	float scale = 0.3f;
-
-	
+	float scale = 0.3f;	
 
 	for (int x = 0; x < size.x; x++)
 	{	
 		for (int y = 0; y < size.y; y++) {
 			iPoint pos = MapToWorld(x, y);
 			
+			//TODO
+			/*
+				Blit a different texture depending on the value we have in [x][y] coordinates
+				Textures are inside App->scene
+				We the following textures: water, sand, grass, forest
+			*/
+
 			if (procedural_map[x][y] >= 0) //Water
 				App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
 			if (procedural_map[x][y] > 0.4) //Sand
 				App->render->Blit(App->scene->sand_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.45) //Grass
+			if (procedural_map[x][y] > 0.44) //Grass
 				App->render->Blit(App->scene->grass_tex, pos.x, pos.y, NULL, scale);
 			if (procedural_map[x][y] > 0.7) //Forest
 				App->render->Blit(App->scene->forest_tex, pos.x, pos.y, NULL, scale);
