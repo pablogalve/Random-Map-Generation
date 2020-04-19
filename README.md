@@ -19,6 +19,7 @@ You'll find:
 # Controls 
 - Arrow Keys: Move around map
 - Space: Generate a new random map
+- F1: Generates default map (Seed 1337)
 	
 # Credits
 [Fast c++ Noise Library by Jordan Peck](https://github.com/Auburns/FastNoise)

@@ -67,8 +67,7 @@ Space sizes may be different for each space.
 We divide until we can't divide anymore or until we reach a defined maximum number of spaces.
 We'll get something like that:
 
-![Dividing Space](/docs/Assets/Binary_space_partitioning_concept__01_dividing_space.PNG)
-![Dividing Space](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__01_dividing_space.PNG)
+![Dividing Space](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Binary_space_partitioning_concept__01_dividing_space.PNG?raw=true)
 <img src="/Assets/Binary_space_partitioning_concept__01_dividing_space.PNG" alt="alt text" width="400" height="200">
 
 Then, once we have the space divided we generate separated rooms inside each space.
