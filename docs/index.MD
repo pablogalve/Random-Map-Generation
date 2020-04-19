@@ -90,9 +90,6 @@ Used by Spore.
 
 They generate creatures with interpretive methodologies.
 
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_spore_02.PNG?raw=true" alt="alt text" width="200" height="100">
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_motion.PNG?raw=true" alt="alt text" width="200" height="100">
-
 |![Spore](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_spore_02.PNG?raw=true)|![Motion Graphics](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/Interpretive_motion.PNG?raw=true)|
 |:---:|:---:|
 |Spore|Motion Graphics|
@@ -131,6 +128,33 @@ That was the result:
 <img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/procedural_map_03.PNG?raw=true" alt="Height Formula" width="400" height="200">
 
 ## TODOs
+
+## TODO 1: Generate Perlin Noise
+Output: You won’t see anything on screen yet. But don't worry, it's working.
+
+## TODO 2.1: Store Perlin Noise 
+Output: You will see values in console
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_1.PNG?raw=true" alt="Height Formula" width="400" height="200">
+
+## TODO 2.2: Adjust Perlin Noise to a 0-1 range
+Output: You will see values from 0 to 1 in console
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_2.PNG?raw=true" alt="Height Formula" width="400" height="200">
+
+## TODO 3: Draw Map from height_map
+Output: You will see a map in screen
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/procedural_map_04.PNG?raw=true" alt="Height Formula" width="400" height="200">
+## TODO 4: Generate a random seed
+Output: You will the the same, but don't worry!
+
+## TODO 5: Use the seed
+Output: That's all! You have random maps generated procedurally!
+
+|![Map 1](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/procedural_map_01.PNG?raw=true)|![Map 2](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/procedural_map_02.PNG?raw=true)|
+|:---:|:---:|
+|Map 1|Map 2|
 
 ## Theory on how to do Infinite Worlds
 It could seem difficult to achieve, but it is not.
