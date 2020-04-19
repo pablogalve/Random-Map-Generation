@@ -40,6 +40,8 @@ public:
 	SDL_Texture* water_tex;
 	SDL_Texture* forest_tex;
 	SDL_Texture* sand_tex;
+	SDL_Texture* mountain_tex;
+	SDL_Texture* mountain_snow_tex;
 private:
 	
 	bool going_up;

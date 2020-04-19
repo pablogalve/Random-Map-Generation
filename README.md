@@ -16,6 +16,10 @@ You'll find:
 	- Infinite maps
 	- UI to adjust procedural parameters easily
 
+# Controls 
+- Arrow Keys: Move around map
+- Space: Generate a new random map
+	
 # Credits
 [Fast c++ Noise Library by Jordan Peck](https://github.com/Auburns/FastNoise)
 

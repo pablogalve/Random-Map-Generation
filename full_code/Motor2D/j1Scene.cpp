@@ -39,6 +39,8 @@ bool j1Scene::Start()
 	sand_tex = App->tex->Load("maps/sand.png");
 	grass_tex = App->tex->Load("maps/grass.png");
 	forest_tex = App->tex->Load("maps/forest.png");
+	mountain_tex = App->tex->Load("maps/mountain.png");
+	mountain_snow_tex = App->tex->Load("maps/mountain_snow.png");
 
 	//TODO
 	/*Default seed is 1337
@@ -81,12 +83,12 @@ bool j1Scene::Update(float dt)
 		App->render->camera.x -= floor(200.0f * dt);
 
 	//TODO
-	//Same as before. The other one was executed at start and this one when you press F1	
-	if (App->input->GetKey(SDL_SCANCODE_F1) == KEY_DOWN)
+	//Same as before. The other one was executed at start and this one when you press space	
+	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
 		App->procedural_map->generatePerlinNoise(App->procedural_map->generateSeed());
 
 	//We print the generated map on screen
-	App->map->DrawProceduralMap(App->map->height_map, { 100, 100 });
+	App->map->DrawProceduralMap(App->map->height_map);
 
 	int x, y;
 	App->input->GetMousePosition(x, y);

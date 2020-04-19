@@ -453,13 +453,14 @@ bool j1Map::LoadProperties(pugi::xml_node& node, Properties& properties)
 	return ret;
 }
 
-void j1Map::DrawProceduralMap(float procedural_map[][100], iPoint size)
+void j1Map::DrawProceduralMap(float procedural_map[][100])
 {
+	//Use that variable as zoom
 	float scale = 0.3f;	
 
-	for (int x = 0; x < size.x; x++)
+	for (int x = 0; x < 100; x++)
 	{	
-		for (int y = 0; y < size.y; y++) {
+		for (int y = 0; y < 100; y++) {
 			iPoint pos = MapToWorld(x, y);
 			
 			//TODO
@@ -471,12 +472,16 @@ void j1Map::DrawProceduralMap(float procedural_map[][100], iPoint size)
 
 			if (procedural_map[x][y] >= 0) //Water
 				App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.4) //Sand
+			if (procedural_map[x][y] > 0.35) //Sand
 				App->render->Blit(App->scene->sand_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.44) //Grass
+			if (procedural_map[x][y] > 0.4) //Grass
 				App->render->Blit(App->scene->grass_tex, pos.x, pos.y, NULL, scale);
-			if (procedural_map[x][y] > 0.7) //Forest
+			if (procedural_map[x][y] > 0.6) //Forest
 				App->render->Blit(App->scene->forest_tex, pos.x, pos.y, NULL, scale);
+			if (procedural_map[x][y] > 0.7) //Mountain
+				App->render->Blit(App->scene->mountain_tex, pos.x, pos.y, NULL, scale);
+			if (procedural_map[x][y] > 0.8) //Mountain snow
+				App->render->Blit(App->scene->mountain_snow_tex, pos.x, pos.y, NULL, scale);
 
 			//Debug to see low and high values
 			if (procedural_map[x][y] > high_value)
