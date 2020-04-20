@@ -116,12 +116,8 @@ This is a perlin noise interpretation in 3D:
 <img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_formula.PNG?raw=true" alt="Height Formula" width="400" height="200">
 
 Then, we interpretate numbers to spawn terrains. For this tutorial I used the following data
-- 0-0.35 -> Water
-- 0.35-0.4 -> Sand
-- 0.35-0.4 -> Grass
-- 0.35-0.4 -> Forest
-- 0.35-0.4 -> Mountain
-- 0.35-0.4 -> Snowy Mountain
+
+<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/terrain_data.PNG?raw=true" alt="Height Formula" width="400" height="200">
 
 That was the result:
 
