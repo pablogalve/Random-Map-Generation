@@ -139,14 +139,14 @@ Output: You won’t see anything on screen yet. But don't worry, it's working.
 ## TODO 2.1: Store Perlin Noise 
 Output: You will see values in console and a height_map on screen
 
-|![ ](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_1.PNG?raw=true)|![ ](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_map_error.PNG?raw=true)|
+|<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_1.PNG?raw=true" alt=" " width="400" height="200">|<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_map_error.PNG?raw=true" alt=" " width="400" height="200">|
 |:---:|:---:|
 | Console View | Screen View |
 
 ## TODO 2.2: Adjust Perlin Noise to a 0-1 range
 Output: You will see values from 0 to 1 in console
 
-|![ ](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_2.PNG?raw=true)|![ ](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_map_perlin_noise.PNG?raw=true)|
+|<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_2.PNG?raw=true" alt=" " width="400" height="200">|<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_map_perlin_noise.PNG?raw=true" alt=" " width="400" height="200">|
 |:---:|:---:|
 | Console View | Screen View |
 
