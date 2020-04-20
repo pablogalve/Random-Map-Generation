@@ -12,6 +12,17 @@ Procedural_Map_Gen::~Procedural_Map_Gen()
 {
 }
 
+bool Procedural_Map_Gen::Awake(pugi::xml_node& config) {
+
+	LOG("Loading Procedural Map Data");
+	bool ret = true;
+
+	frequency = config.child("frequency").attribute("value").as_float();
+	default_seed = config.child("default_seed").attribute("value").as_float();
+
+	return ret;
+}
+
 int Procedural_Map_Gen::generateSeed() {
 	//TODO 4: Generate a random seed
 	/*
@@ -28,7 +39,7 @@ int Procedural_Map_Gen::generateSeed() {
 
 void Procedural_Map_Gen::generatePerlinNoise() {
 	//We use always the same seed
-	generatePerlinNoise(1337);
+	generatePerlinNoise(default_seed);
 }
 
 void Procedural_Map_Gen::generatePerlinNoise(unsigned int seed)

@@ -11,12 +11,16 @@ public:
 	Procedural_Map_Gen();
 	~Procedural_Map_Gen();
 
+	bool Awake(pugi::xml_node& config);
+
 	int generateSeed();
 
 	void generatePerlinNoise();
 	void generatePerlinNoise(unsigned int seed);
 private:
-	time_t msec;	
+	time_t msec;
+	float				frequency;
+	float				default_seed;
 };
 
 #endif // !__Procedural_Map_Gen__

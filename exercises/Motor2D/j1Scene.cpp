@@ -93,7 +93,7 @@ bool j1Scene::Update(float dt)
 	
 
 	//We print the generated map on screen
-	App->map->DrawProceduralMap(App->map->height_map);
+	App->map->DrawProceduralMap();
 
 	int x, y;
 	App->input->GetMousePosition(x, y);

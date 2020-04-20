@@ -21,12 +21,13 @@ public:
 	void generatePerlinNoise(unsigned int seed);
 
 public:
-	float				frequency;
+	
 
 	
 private:	
 	time_t				msec;	
-	p2SString			folder;	
+	float				frequency;
+	float				default_seed;
 };
 
 #endif // !__Procedural_Map_Gen__

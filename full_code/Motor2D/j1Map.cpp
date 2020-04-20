@@ -28,13 +28,15 @@ bool j1Map::Awake(pugi::xml_node& config)
 			height_map[i][j] = 0;
 		}
 
+	//TODO 3: You don't need to do anything here
+	//Take a look that we are taking values from the config XML file
 	//Load data from XML
-	water_val = { config.child("terrain_types").child("water").attribute("min_value").as_float() };
-	sand_val = { config.child("terrain_types").child("sand").attribute("min_value").as_float() };
-	grass_val = { config.child("terrain_types").child("grass").attribute("min_value").as_float() };
-	forest_val = { config.child("terrain_types").child("forest").attribute("min_value").as_float() };
-	mountain_val = { config.child("terrain_types").child("mountain").attribute("min_value").as_float() };
-	snowy_mountain_val = { config.child("terrain_types").child("snowy_mountain").attribute("min_value").as_float() };
+	water_val = config.child("terrain_types").child("water").attribute("min_value").as_float();
+	sand_val = config.child("terrain_types").child("sand").attribute("min_value").as_float();
+	grass_val = config.child("terrain_types").child("grass").attribute("min_value").as_float();
+	forest_val = config.child("terrain_types").child("forest").attribute("min_value").as_float();
+	mountain_val = config.child("terrain_types").child("mountain").attribute("min_value").as_float();
+	snowy_mountain_val = config.child("terrain_types").child("snowy_mountain").attribute("min_value").as_float();
 
 	return ret;
 }

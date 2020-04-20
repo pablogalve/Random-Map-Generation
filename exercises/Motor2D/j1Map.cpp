@@ -28,6 +28,16 @@ bool j1Map::Awake(pugi::xml_node& config)
 			height_map[i][j] = 0;
 		}
 
+	//TODO 3: You don't need to do anything here
+	//Take a look that we are taking values from the config XML file
+	//Load data from XML
+	water_val = config.child("terrain_types").child("water").attribute("min_value").as_float();
+	sand_val = config.child("terrain_types").child("sand").attribute("min_value").as_float();
+	grass_val = config.child("terrain_types").child("grass").attribute("min_value").as_float();
+	forest_val = config.child("terrain_types").child("forest").attribute("min_value").as_float();
+	mountain_val = config.child("terrain_types").child("mountain").attribute("min_value").as_float();
+	snowy_mountain_val = config.child("terrain_types").child("snowy_mountain").attribute("min_value").as_float();
+
 	return ret;
 }
 
@@ -448,7 +458,7 @@ bool j1Map::LoadProperties(pugi::xml_node& node, Properties& properties)
 	return ret;
 }
 
-void j1Map::DrawProceduralMap(float procedural_map[][100])
+void j1Map::DrawProceduralMap()
 {
 	//Use that variable as zoom
 	float scale = 0.3f;	
@@ -462,7 +472,9 @@ void j1Map::DrawProceduralMap(float procedural_map[][100])
 			/*
 				Blit a different texture depending on the value we have in [x][y] coordinates
 				Textures are inside App->scene
-				We the following textures: water, sand, grass, forest
+				We have the following textures: water, sand, grass, forest
+				Remember that textures minimum values are extracted from the config XML in the awake function
+				We have an axample below
 			*/
 			float value = height_map[x][y];
 
@@ -479,8 +491,8 @@ void j1Map::DrawProceduralMap(float procedural_map[][100])
 			}
 			//This is an example of blitting
 			//Uncomment that code and it will render water textures
-			//if(value >= 0 && value < 0.25)
-				//App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
+			//if (value >= water_val && value < sand_val) //Water
+			//	  App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
 		}
 	}
 }

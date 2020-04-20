@@ -36,5 +36,6 @@
   
   <procedural_map>
 	<frequency value = "0.3"/>	
+	<default_seed value = "1337/>
   </procedural_map>
 </config>
