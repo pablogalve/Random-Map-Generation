@@ -464,18 +464,19 @@ void j1Map::DrawProceduralMap()
 				Textures are inside App->scene
 				We have the following textures: water, sand, grass, forest, mountain and snowy mountain
 			*/
+			float value = height_map[x][y];
 
-			if (height_map[x][y] >= 0) //Water
+			if (value >= 0 && value < 0.35) //Water
 				App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
-			if (height_map[x][y] > 0.35) //Sand
+			if (value >= 0.35 && value < 0.4) //Sand
 				App->render->Blit(App->scene->sand_tex, pos.x, pos.y, NULL, scale);
-			if (height_map[x][y] > 0.4) //Grass
+			if (value >= 0.4 && value < 0.6) //Grass
 				App->render->Blit(App->scene->grass_tex, pos.x, pos.y, NULL, scale);
-			if (height_map[x][y] > 0.6) //Forest
+			if (value >= 0.6 && value < 0.7) //Forest
 				App->render->Blit(App->scene->forest_tex, pos.x, pos.y, NULL, scale);
-			if (height_map[x][y] > 0.7) //Mountain
+			if (value >= 0.7 && value < 0.8) //Mountain
 				App->render->Blit(App->scene->mountain_tex, pos.x, pos.y, NULL, scale);
-			if (height_map[x][y] > 0.8) //Snowy mountain
+			if (value >= 0.8 && value <= 1) //Snowy mountain
 				App->render->Blit(App->scene->mountain_snow_tex, pos.x, pos.y, NULL, scale);
 		}
 	}
