@@ -35,11 +35,12 @@ void Procedural_Map_Gen::generatePerlinNoise(unsigned int seed)
 {
 	//TODO 1: Generate Perlin Noise
 	//Create a new FastNoise object
-	
+
 
 	//Default noise type is Simplex
 	//But we need Perlin Noise
-		
+
+
 	//You have to uncomment that code and change "myObject" to your variable name
 	//myObject.SetSeed(seed);
 
@@ -59,7 +60,6 @@ void Procedural_Map_Gen::generatePerlinNoise(unsigned int seed)
 				You have to get noise at the coordinates [x][y] 
 				and store that value in height_map variable (inside App->map)
 			*/
-
 
 			//TODO 2.2: Adjust Perlin Noise to 0-1
 			/*

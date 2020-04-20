@@ -457,15 +457,30 @@ void j1Map::DrawProceduralMap(float procedural_map[][100])
 	{	
 		for (int y = 0; y < 100; y++) {
 			iPoint pos = MapToWorld(x, y);
-			
+
 			//TODO 3: Draw Map from height_map
 			/*
 				Blit a different texture depending on the value we have in [x][y] coordinates
 				Textures are inside App->scene
 				We the following textures: water, sand, grass, forest
 			*/
+			float value = height_map[x][y];
 
-			App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
+			//This renders the perlin noise
+			//You have to comment or delete that code once you Blit the actual map
+			{
+				SDL_Rect perlin_noise_test;
+
+				perlin_noise_test.x = pos.x / 4;
+				perlin_noise_test.y = pos.y / 4;
+				perlin_noise_test.w = 32 / 4;
+				perlin_noise_test.h = 32 / 4;
+				App->render->DrawQuad(perlin_noise_test, 255, 255, 255, 255 - (value * 255), true, true);
+			}
+			//This is an example of blitting
+			//Uncomment that code and it will render water textures
+			//if(value >= 0 && value < 0.25)
+				//App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
 		}
 	}
 }
