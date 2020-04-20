@@ -129,21 +129,29 @@ That was the result:
 
 ## TODOs
 
+To follow the tutorial you can download the code here:
+
+https://github.com/pablogalve/Random-Map-Generation/releases
+
 ## TODO 1: Generate Perlin Noise
 Output: You won’t see anything on screen yet. But don't worry, it's working.
 
 ## TODO 2.1: Store Perlin Noise 
-Output: You will see values in console
+Output: You will see values in console and a height_map on screen
 
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_1.PNG?raw=true" alt="Height Formula" width="400" height="200">
+|![ ](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_1.PNG?raw=true)|![ ](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_map_error.PNG?raw=true)|
+|:---:|:---:|
+| Console View | Screen View |
 
 ## TODO 2.2: Adjust Perlin Noise to a 0-1 range
 Output: You will see values from 0 to 1 in console
 
-<img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_2.PNG?raw=true" alt="Height Formula" width="400" height="200">
+|![ ](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/todo_2_2.PNG?raw=true)|![ ](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/height_map_perlin_noise.PNG?raw=true)|
+|:---:|:---:|
+| Console View | Screen View |
 
 ## TODO 3: Draw Map from height_map
-Output: You will see a map in screen
+Output: You will see a map on screen
 
 <img src="https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/procedural_map_04.PNG?raw=true" alt="Height Formula" width="400" height="200">
 ## TODO 4: Generate a random seed
@@ -160,7 +168,7 @@ Output: That's all! You have random maps generated procedurally!
 It could seem difficult to achieve, but it is not.
 You should only need two things
 - Occlusion Culling
-- Generate Perlin Noise only for all the coordinates seen in screen
+- Generate Perlin Noise only for all the coordinates seen on screen
 
 ### Occlusion Culling
 Neither computers nor servers can manage the computational power of storing an entire universe or world.
