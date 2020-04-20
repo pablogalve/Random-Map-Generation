@@ -89,6 +89,9 @@ public:
 	j1Map*				map = NULL;
 	Procedural_Map_Gen* procedural_map = NULL;
 
+	pugi::xml_document	config_file;
+	pugi::xml_node		config;
+	pugi::xml_node		app_config;
 private:
 
 	p2List<j1Module*>	modules;

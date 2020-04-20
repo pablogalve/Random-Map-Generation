@@ -5,11 +5,21 @@
 
 Procedural_Map_Gen::Procedural_Map_Gen()
 {
-	
+	name.create("procedural_map");
 }
 
 Procedural_Map_Gen::~Procedural_Map_Gen()
 {
+}
+
+bool Procedural_Map_Gen::Awake(pugi::xml_node& config) {
+	
+	LOG("Loading Procedural Map Data");
+	bool ret = true;
+		
+	frequency = config.child("frequency").attribute("value").as_float();
+
+	return ret;
 }
 
 int Procedural_Map_Gen::generateSeed() {

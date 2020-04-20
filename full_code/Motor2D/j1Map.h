@@ -137,6 +137,13 @@ private:
 public:
 	MapData data;
 	float height_map[100][100];
+
+	float				water_val;
+	float				sand_val;
+	float				grass_val;
+	float				forest_val;
+	float				mountain_val;
+	float				snowy_mountain_val;
 private:	
 	pugi::xml_document	map_file;
 	p2SString			folder;

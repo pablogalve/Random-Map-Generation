@@ -24,6 +24,17 @@
 
   <map>
     <folder>maps/</folder>
+	<terrain_types>
+		<water min_value="0.00"/>
+		<sand min_value="0.30"/>
+		<grass min_value="0.35"/>
+		<forest min_value="0.60"/>
+		<mountain min_value="0.70"/>
+		<snowy_mountain min_value="0.80"/>
+	</terrain_types>
   </map>
-  <minimap width="250" corner="bottom_left" margin="20"/>
+  
+  <procedural_map>
+	<frequency value = "0.3"/>	
+  </procedural_map>
 </config>

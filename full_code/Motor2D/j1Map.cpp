@@ -28,6 +28,14 @@ bool j1Map::Awake(pugi::xml_node& config)
 			height_map[i][j] = 0;
 		}
 
+	//Load data from XML
+	water_val = { config.child("terrain_types").child("water").attribute("min_value").as_float() };
+	sand_val = { config.child("terrain_types").child("sand").attribute("min_value").as_float() };
+	grass_val = { config.child("terrain_types").child("grass").attribute("min_value").as_float() };
+	forest_val = { config.child("terrain_types").child("forest").attribute("min_value").as_float() };
+	mountain_val = { config.child("terrain_types").child("mountain").attribute("min_value").as_float() };
+	snowy_mountain_val = { config.child("terrain_types").child("snowy_mountain").attribute("min_value").as_float() };
+
 	return ret;
 }
 
@@ -468,28 +476,29 @@ void j1Map::DrawProceduralMap()
 			//This renders the perlin noise
 			//You have to comment or delete that code once you Blit the actual map
 			{
-				SDL_Rect perlin_noise_test;
+				/*SDL_Rect perlin_noise_test;
 
 				perlin_noise_test.x = pos.x / 4;
 				perlin_noise_test.y = pos.y / 4;
 				perlin_noise_test.w = 32 / 4;
 				perlin_noise_test.h = 32 / 4;
 				App->render->DrawQuad(perlin_noise_test, 255, 255, 255, 255 - (value * 255), true, true);
+				*/
 			}
 			
 			//That code generates the map
 			{
-				if (value >= 0 && value < 0.35) //Water
+				if (value >= water_val && value < sand_val) //Water
 					App->render->Blit(App->scene->water_tex, pos.x, pos.y, NULL, scale);
-				else if (value >= 0.35 && value < 0.4) //Sand
+				else if (value >= sand_val && value < grass_val) //Sand
 					App->render->Blit(App->scene->sand_tex, pos.x, pos.y, NULL, scale);
-				else if (value >= 0.4 && value < 0.6) //Grass
+				else if (value >= grass_val && value < forest_val) //Grass
 					App->render->Blit(App->scene->grass_tex, pos.x, pos.y, NULL, scale);
-				else if (value >= 0.6 && value < 0.7) //Forest
+				else if (value >= forest_val && value < mountain_val) //Forest
 					App->render->Blit(App->scene->forest_tex, pos.x, pos.y, NULL, scale);
-				else if (value >= 0.7 && value < 0.8) //Mountain
+				else if (value >= mountain_val && value < snowy_mountain_val) //Mountain
 					App->render->Blit(App->scene->mountain_tex, pos.x, pos.y, NULL, scale);
-				else if (value >= 0.8 && value <= 1) //Snowy mountain
+				else if (value >= snowy_mountain_val) //Snowy mountain
 					App->render->Blit(App->scene->mountain_snow_tex, pos.x, pos.y, NULL, scale);
 			}
 		}
