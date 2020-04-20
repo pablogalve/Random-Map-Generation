@@ -20,7 +20,23 @@ You'll find:
 - Arrow Keys: Move around map
 - Space: Generate a new random map
 - F1: Generates default map (Seed 1337)
-	
+- ESC: Close Application
+
+# How to install
+[You can download our latest release here](https://github.com/pablogalve/Random-Map-Generation/releases)
+
+There you will find 2 options for every version released
+- Procedural Map Generation
+	- [Download this one](https://github.com/pablogalve/Random-Map-Generation/releases/tag/0.2) if you just want to see the result
+- Procedural Map Generation + Exercises
+	- [Download this one](https://github.com/pablogalve/Random-Map-Generation/releases/tag/0.2.1) if you want to follow the tutorial
+
+You'll find the tutorial [in my website](https://pablogalve.github.io/Random-Map-Generation/) with:
+- An explanation
+- Exercises
+- Short video tutorial solving the exercises
+- A solution with the full code
+
 # Credits
 [Fast c++ Noise Library by Jordan Peck](https://github.com/Auburns/FastNoise)
 
