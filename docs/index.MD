@@ -160,6 +160,10 @@ Output: That's all! You have random maps generated procedurally!
 |:---:|:---:|
 |Map 1|Map 2|
 
+# Solutions in video tutorial form
+
+[![Procedural Map Generation - Solution to exercises](https://github.com/pablogalve/Random-Map-Generation/blob/master/docs/Assets/tutorial_youtube.PNG?raw=true)](https://www.youtube.com/watch?v=CoB_M4Tun4s&feature=youtu.be "Procedural Map Generation - Solution to exercises")
+
 ## Theory on how to do Infinite Worlds
 It could seem difficult to achieve, but it is not.
 You should only need two things
@@ -176,14 +180,16 @@ That's why you should render only what is on screen.
 That way you save memory and prepare the program for generating an infinite world.
 
 ### Perlin Noise Generation
-In our tutorial we limited the map from [100][100] to [100][100].
+In our tutorial we limited the map from coordinates [0][0] to [100][100].
 
 In order to make an infinite world you would need a height_map array that covers visible screen.
 
 When you move the camera you have to unload the map areas that you are now not seeing and generate the new areas that you are exploring- 
 
 # Bibliography
-You can get more information here:
+I used [Fast c++ Noise Library by Jordan Peck](https://github.com/Auburns/FastNoise)
+
+You can get additional information here:
 
 Video: ["Sunny Valley Studio" video series on youtube.](https://www.youtube.com/watch?v=VnqN0v95jtU)
 
@@ -191,5 +197,4 @@ Video: [The Happie Cat: How Procedurally Generated Terrain Works](https://www.yo
 
 Video: [Coding Challenge #10 2D Terrain Generation using Perlin Noise](https://www.youtube.com/watch?v=jv6YT9pPIHw)
 
-I used [Fast c++ Noise Library by Jordan Peck](https://github.com/Auburns/FastNoise)
 
